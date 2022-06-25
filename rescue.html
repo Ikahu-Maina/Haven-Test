@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Chetty's Pet Haven </title>
+<link rel="icon" type="image/x-icon" href="img/webbar.png">
+<link rel="stylesheet" href="rescue.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  
+    <div class="body_section">
+    <header>
+		<div class="top-header">
+				
+			<div class="logo">
+				<img src="img/webfin.png" />
+				<br><h1>A second home for your pet</h1>
+			</div> 
+
+			
+			<div class="nav-btn">
+				<nav>
+				<div id="menu">
+					<ul>
+						<li><a href="home.html">Home</a></li>
+						<li><a href="#">Petcare</a></li>
+						<li><a href="adopt.html">Adopt</a></li>
+						<li class="active" style="border: 1px solid #bf06c9;"><a href="#">Rescue</a></li>
+					</ul>
+				</div>
+				</nav>
+				<div id="bt-up">
+					<button class="signup"><a href="signup.html" style="text-decoration: none;color: #000; font-weight: 500;">SIGN UP</a></button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+    <div class="section_content">
+        <div class="content_details">
+            <img src = "img/dog2.jpg" width = "100%" height = "300">
+            <div class="content_details_headers">
+              <h2>Let's save a pet</h2>
+              <h3>Are you a pet owner and wondering where and how to let go your pet due to unavoidable circumstances? Is there a pet 
+                  in your neighbourhood suffering cruelty, abuse or neglet? Do you know of a pet that's abandoned or homeless?<br></h3>	
+              <h4>Here at Chetty's Haven we rehome and rehabilitate pets.
+                  By filling RESCUE FORM, we're able to reach and save them </h4>	
+            </div>
+        </div>
+
+
+        <div class="content_form">
+            <form action="/action_page.php">
+            <fieldset>
+                <legend>About Pet:</legend>
+
+    <!--selection of pet type-->            
+                <p>Select Pet type:</p>
+                <input type="radio" id="dog" name="petselected" value="DOG">
+                <label for="dog">DOG</label>
+
+                <input type="radio" id="cat" name="petselected" value="CAT">
+                <label for="cat">CAT</label>
+
+                <input type="radio" id="rabbit" name="petselected" value="RABBIT">
+                <label for="rabbit">RABBIT</label>
+
+                <input type="radio" id="fish" name="petselected" value="FISH">
+                <label for="fish">FISH</label>
+
+                <input type="radio" id="guineapig" name="petselected" value="GUINEA PIG">
+                <label for="guineapig">GUINEA PIG</label>
+
+                <input type="radio" id="bird" name="petselected" value="BIRD">
+                <label for="bird">BIRD</label>
+
+                <input type="radio" id="reptile" name="petselected" value="REPTILE">
+                <label for="reptile">REPTILE</label><br><br>
+
+    <!--Uploading pet's photo-->
+                <label for="petpic">Upload pet's photo:</label>
+                <input type="file" id="petpic" name="petpic" accept="image/png, image/jpeg"><br><br>
+                
+    <!--getting gps coordinates/location-->
+                <p>Current location of pet: <button onclick="getLocation()">Take GPS</button></p>
+                <p id="displaylat"></p> 
+                <p id="displaylong"></p>
+
+    <!--pet's description area-->
+                <label for="petdescribe">Tell us about the pet:</label><br>
+                <textarea id="petdescribe" name="petdescribe" rows="5" cols="75%">The cat has been living under bridge...</textarea><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Details:</legend><br>
+
+    <!--sender's contact info-->
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname" required>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname" required><br><br>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="0700111222" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+            </fieldset>
+
+    <!--submit-->        
+            <input type="submit" value="Submit">
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+
+ 
+<script>
+    var x = document.getElementById("displaylat");
+    var y = document.getElementById("displaylong");
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+        y.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude;
+      y.innerHTML ="Longitude: " + position.coords.longitude;
+    }
+</script>
+
+</body>
+</html>
