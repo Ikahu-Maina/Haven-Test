@@ -238,11 +238,10 @@ header{
    }
 
    footer{
-    position: absolute;
-    bottom: 0;
+    position: static;
   }
   
-  @media (max-height:800px){
+  @media (max-height:auto){
     footer { position: static; }
 
   }
@@ -255,7 +254,6 @@ header{
     text-align: left;
     font: bold 16px sans-serif;
     padding: 50px 50px 60px 50px;
-    margin-top: 80px;
   }
   
   .footer .footer-left,
