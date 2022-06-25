@@ -237,14 +237,7 @@ header{
     margin-right: auto;
    }
 
-   footer{
-    position: static;
-  }
-  
-  @media (max-height:auto){
-    footer { position: static; }
 
-  }
   
   
   .footer{
